@@ -1,11 +1,15 @@
 package com.itram.tictactoecompose.data
 
+import kotlinx.serialization.Serializable
+
+
+@Serializable
 data class GameState(
     val playerAtTurn: Char? = 'X',
     val field: Array<Array<Char?>> = emptyField(),
     val winningPlayer: Char? = null,
     val isBoardFull: Boolean = false,
-    val connectedPlayers: List<Char> = emptyList(),
+    val connectedPlayers: List<Char> = emptyList()
 ) {
     companion object {
         fun emptyField(): Array<Array<Char?>> {
